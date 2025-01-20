@@ -1,0 +1,15 @@
+<div class="container">
+<form class="text-center" action="" [formGroup]="registerForm">
+    <h3>Register</h3>
+    <label for="">Username</label>
+    <input type="text" name="username" formControlName="username">
+    <br><br>
+    <label for="">Email-ID</label>
+    <input type="text" name="email" formControlName="email">
+    <br><br>
+    <label for="">Password</label>
+    <input type="password" name="password" formControlName="password">
+    <br><br>
+    <button type="submit" name="submit" class="btn btn-outline-success btn-sm back" (click)="onSubmit()">Submit</button>
+</form>
+</div>

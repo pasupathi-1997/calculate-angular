@@ -1,0 +1,46 @@
+<html>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <body>
+    <nav class="navbar navbar-expand-md bg-primary">
+      <div class="container-fluid">
+        <h1 style="color:white; font-size:20px;">Products Details</h1>
+        <input  type="text" [(ngModel)]="todo" (ngModelChange)="search()" placeholder="Search..." >
+      </div>
+    </nav>
+    <div>
+
+      <table class="table table-bordered border-dark">
+        <thead>
+          <tr>
+            <th scope="col">Todo</th>
+            <th scope="col">Completed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data | paginate: {itemsPerPage:pageSize, currentPage:pageNumber, totalItems:length}">
+            <td>{{item.todo}}</td>
+            <td>{{item.completed}}</td>
+            </tr>
+            <div class="row">
+              <div class="col-2">
+                <div class="datatable_length"><label>Items Per Page:
+                  <select [(ngModel)]="pageSize" >
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </label>
+                </div>
+                <div>{{length}}</div>
+              </div>
+            </div>
+           <pagination-controls (pageChange)="pageNumber = $event"  class="text-center"></pagination-controls>
+        </tbody>
+      </table>
+    </div>
+
+  </body>
+</html>
+

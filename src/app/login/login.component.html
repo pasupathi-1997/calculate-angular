@@ -1,0 +1,12 @@
+<div class="container">
+  <form action="" class="text-center" [formGroup]="loginform">
+    <h3>Login Form</h3>
+    <label for="">Email-ID</label>
+    <input type="text" name="email" formControlName="email">
+    <br><br>
+    <label for="">Password</label>
+    <input type="password" name="password" formControlName="password">
+    <br><br>
+    <button class="btn btn-outline-success btn-sm back" type="submit" name="submit" (click)="onSubmit()">Submit</button>
+  </form>
+</div>
